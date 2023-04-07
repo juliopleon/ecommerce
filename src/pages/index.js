@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Product, FooterBanner, HeroBanner } from '../components';
+import { Product, FooterBanner, HeroBanner } from 'components';
 
 const Home = () => {
   return (
