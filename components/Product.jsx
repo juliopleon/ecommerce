@@ -12,7 +12,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
                         src={urlFor(image && image[0])}
                         width={250}
                         height={250}
-                        className="product-image"
+                        className="product-images"
                     />
                     <p className="product-name">{name}</p>
                     <p className="product-price">${price}</p>
