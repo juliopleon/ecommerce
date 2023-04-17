@@ -19,12 +19,12 @@ const Home = ({ products, bannerData }) => (
     </div>
 
 
-    <FooterBanner />
+    <FooterBanner footerBanner={bannerData && bannerData[0]} />
   </div>
 );
 
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
   const query = '*[_type == "product"]';
   const products = await client.fetch(query);
 
