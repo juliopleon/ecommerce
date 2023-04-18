@@ -20,6 +20,7 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.3.1",
+    "sanity": "^3.8.3",
     "stripe": "^8.209.0"
   },
   "devDependencies": {
