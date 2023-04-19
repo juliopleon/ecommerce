@@ -1,8 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Head from 'next/head';
+import Navbar from './Navbar';
 
 const Layout = () => {
     return (
-        <div>Layout</div>
+        <div className="layout">
+            <Head>
+                <title>Julio's Store</title>
+            </Head>
+            <header>
+                <Navbar />
+            </header>
+        </div>
     )
 }
 
