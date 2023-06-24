@@ -58,7 +58,7 @@ const ProductDetails = ({ product, products }) => {
                     </div>
                     <div className="buttons">
                         <button type="button" className="add-to-cart" onClick="">Add to Cart</button>
-                        <button type="button" onClick="">Buy Now</button>
+                        <button type="button" className="buy-now" onClick="">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
     const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-    const productsQuery = '[_type == "product"]'
+    const productsQuery = '*[_type == "product"]'
 
     const product = await client.fetch(query);
     const products = await client.fetch(productsQuery);
