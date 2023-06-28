@@ -25,7 +25,14 @@ export const StateContext = ({ children }) => {
 
                 }
             })
+
+            setCartItems(updatedCartItems);
+        } else {
+            product.qty = quantity;
+
+            setCartItems([...cartItems, { ...product }])
         }
+        toast.success(`${qty} ${product.name} added to the cart`);
     }
 
     const increaseQty = () => {
@@ -50,6 +57,7 @@ export const StateContext = ({ children }) => {
                 qty,
                 increaseQty,
                 decreaseQty,
+                onAdd
             }}
         >
             {children}
