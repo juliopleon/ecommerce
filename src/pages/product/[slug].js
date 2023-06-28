@@ -3,13 +3,14 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-
 
 import { client, urlFor } from '../../lib/client'
 import { Product } from '../../components';
-// import { useStateContext } from '../../context/StateContext';
+import { useStateContext } from '../../context/StateContext';
 
 
 const ProductDetails = ({ product, products }) => {
     const { image, name, details, price } = product;
 
     const [index, setIndex] = useState(0);
+    const { decreaseQty, increaseQty, qty } = useStateContext();
 
     return (
         <div>
