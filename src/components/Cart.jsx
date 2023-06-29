@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
-import { Toast } from 'react-hot-toast';
-import { useStateContext } from '../../context/StateContext';
+import { toast } from 'react-hot-toast';
 import { urlFor } from '@/lib/client';
+import { useStateContext } from '../../context/StateContext';
 
 
 
@@ -25,11 +25,29 @@ const Cart = () => {
                     <span className="cart-num-items">({totalQuantities} items)</span>
                 </button>
 
-                {cartItems.length > 1 && (
+                {cartItems.length < 1 && (
                     <div className="empty-cart">
-                        <AiOutlineShopping />
+                        <AiOutlineShopping size={150} />
+                        <h3>Your shopping cart is empty</h3>
+                        <Link href="/">
+                            <button
+                                type="button"
+                                onClick={() => setShowCart(false)}
+                                className="btn"
+                            >
+                                Continue Shopping
+                            </button>
+                        </Link>
                     </div>
                 )}
+
+                <div className="product-container">
+                    {cartItems.length >= 1 && cartItems.map((item, index) => (
+                        <div className="product" key={index}>
+
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
