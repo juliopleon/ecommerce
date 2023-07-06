@@ -52,7 +52,7 @@ export const StateContext = ({ children }) => {
     }
 
     const increaseQty = () => {
-        setQty((prevQty) => prevQty + 1)
+        setQty((prevQty) => prevQty + 1);
     }
 
     const decreaseQty = () => {
