@@ -65,7 +65,7 @@ export const StateContext = ({ children }) => {
             if (prevQty - 1 < 1) return 1;
 
             return prevQty - 1
-        });
+        })
     }
 
     return (
