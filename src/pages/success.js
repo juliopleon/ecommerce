@@ -4,6 +4,7 @@ import { BsBagCheckFill } from 'react-icons/bs';
 
 
 import { useStateContext } from "../../context/StateContext";
+import { runFireworks } from "@/lib/utils";
 
 export const Success = () => {
     const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
@@ -13,6 +14,7 @@ export const Success = () => {
         setCartItems([]);
         setTotalPrice(0);
         setTotalQuantities(0);
+        runFireworks();
     }, []);
 
 
